@@ -1,3 +1,4 @@
+
 from copy import deepcopy
 
 class ensemble:
@@ -94,7 +95,7 @@ def apply_to_labels(vals, orig1, orig2, cond):
         
     guard = vals["__guard"]
     guard1 = guard&cond
-    guard2 = guard&(1-cond)
+    guard2 = guard&(-cond)
     
     vals["__guard"] = guard1
     ret1 = apply_to_label(vals, orig1)

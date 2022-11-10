@@ -24,7 +24,7 @@ def boolneg(val):
 class Ctx:
     def __init__(self):
         self.vals = values_new()
-        self.vals["__guard"] = 1
+        self.vals["__guard"] = True
 #        vals0 = values_new()
 #        vals0["__guard"] = 1
         self.contexts = {}
@@ -111,4 +111,3 @@ class Ctx:
     
     def getiter(self, it):
         return iter(it) if isinstance(it, ObliviousIterator) else IteratorWrapper(iter(it))
-        
